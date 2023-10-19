@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+  .container {
+    justify-content: space-between;
+  }
+
+  .left {
+    padding-left: 15px;
+  }
+
+  .header {
+    background-color: cornsilk;
+  }
+
+  .hoadon {
+    background-color: aquamarine;
+    height: 100%;
+  }
+
+  .giohang {
+    background-color: coral;
+    height: 100%;
+  }
+
+  .sanpham {
+
+    height: 100%;
+    background-color: chartreuse;
+  }
+
+  img {
+    width: 50%;
+    height: 50%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9999;
+    /* Đặt z-index cao để overlay che phủ các phần tử khác */
+  }
+
+  .fullscreen-overlay.active {
+    pointer-events: auto;
+  }
+
+  
+
+</style>
+
+<body>
+  <div class="fullscreen-overlay"></div>
+  <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Vui lòng chuyển sang chế độ toàn màn hình để sử dụng ứng dụng này.
+            Bằng cách : Ctrl + 0
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-9" style="background-color: beige;">
+      <div class="left">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header">
+              <section class="border p-3 mb-3 d-flex align-items-center flex-column">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Bán Hàng</a>
+                    <a class="navbar-brand" href="#">Hóa Đơn</a>
+                    <a class="navbar-brand" href="#">Thống Kê</a>
+                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <div class="input-group ps-5">
+                        <div class="input-group rounded">
+                          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" />
+                          <button class="input-group-text border-0" id="search-addon">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </section>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hoadon">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Mã</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Chọn</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>HOADON1</td>
+                    <td>Chờ thanh toán</td>
+                    <td class="btn btn-success">Chọn</td>
+                    <td class="btn btn-danger">Hủy</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>HOADON1</td>
+                    <td>Chờ thanh toán</td>
+                    <td class="btn btn-success">Chọn</td>
+                    <td class="btn btn-danger">Hủy</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>HOADON1</td>
+                    <td>Chờ thanh toán</td>
+                    <td class="btn btn-success">Chọn</td>
+                    <td class="btn btn-danger">Hủy</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="giohang">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Stt</th>
+                    <th scope="col">IMG</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Thao tác</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td style="width: 20%;height: 20%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <th class="btn btn-danger">xóa</th>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td style="width: 20%;height: 20%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <th class="btn btn-danger">xóa</th>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td style="width: 20%;height: 20%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <th class="btn btn-danger">xóa</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="Search">
+              <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                  aria-describedby="search-addon" />
+                <button class="input-group-text border-0" id="search-addon">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sanpham">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Img</th>
+                    <th scope="col">Tên Sản phẩm</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Khuyến mãi</th>
+                    <th scope="col">Bao gồm</th>
+                    <th scope="col">Chọn</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td style="width: 10%;height: 10%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <td></td>
+                    <td><b>Sách : Tự học tiếng anh</b></td>
+                    <th class="btn btn-success">Thêm</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td style="width: 10%;height: 10%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <td></td>
+                    <td><b>Sách : Tự học tiếng anh</b></td>
+                    <th class="btn btn-success">Thêm</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td style="width: 10%;height: 10%;"><img src="figma/24df17f9bab58ba053c6c08c3af2f470_1.jpg"
+                        alt="tự học tiếng anh"></td>
+                    <td><b>Tự học tiếng anh</b></td>
+                    <td><b>2</b></td>
+                    <td><b>20.000 vnd</b></td>
+                    <td></td>
+                    <td><b>Sách : Tự học tiếng anh</b></td>
+                    <th class="btn btn-success">Thêm</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-md-3" style="background-color: aquamarine;">
+        <div class="right">
+          <div class="col-md-12">
+            <label>Tổng tiền hàng :</label>
+            <br>
+            <label>Giảm giá :</label>
+            <br>
+            <label>Khách hàng cần trả :</label>
+            <br>
+            <label>Tiền mặt <input type="checkbox"></label>
+            <label>Chuyển khoản <input type="checkbox"></label>
+            <label>Khách đưa <input type="input"></label>
+            <br>
+            <label>Tiền thừa :</label>
+          </div>
+          <div class="col-md-12">
+             <button class="btn btn-success">Thanh toán</button>
+          </div>
+        
+        </div>
+        
+      </div>
+
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const overlay = document.querySelector('.fullscreen-overlay');
+      const modal = document.querySelector('#fullscreenModal');
+
+      function checkScreenSize() {
+        if (window.innerWidth < 1440) {
+          overlay.style.display = 'block';
+          $('#fullscreenModal').modal('show');
+        } else {
+          overlay.style.display = 'none';
+          $('#fullscreenModal').modal('hide');
+        }
+      }
+
+      checkScreenSize();
+
+      window.addEventListener('resize', () => {
+        checkScreenSize();
+      });
+
+      overlay.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+
+      $('#fullscreenModal').on('hidden.bs.modal', function (e) {
+        overlay.style.display = 'none';
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>

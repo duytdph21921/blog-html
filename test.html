@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Bán Hàng</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .grid-container .grid-item-hoadon {
+        background-color: aqua;
+        grid-column: 1/2;
+    }
+
+    .grid-container .grid-item-giohang {
+        background-color: darkgoldenrod;
+        grid-column: 2/3;
+    }
+
+    .grid-container .grid-item-sanpham {
+        background-color: salmon;
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .grid-container .grid-item-thanhtoan {
+        background-color: seagreen;
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-hoadon">1</div>
+            <div class="grid-item-giohang">1</div>
+            <div class="grid-item-sanpham">1</div>
+            <div class="grid-item-thanhtoan">1</div>
+        </div>
+    </div>
+</body>
+
+</html>

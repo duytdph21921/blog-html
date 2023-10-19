@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .nav.navbar {
+        border-bottom: #9d3266 solid 4px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        padding-right: 0px;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .header-content .tag-link {
+        font-weight: bold;
+        font-size: 11px;
+        color: black;
+        text-decoration: none;
+        padding-left: 10px;
+    }
+
+    .header-content .tag-link :hover {
+        color: blue;
+    }
+
+    .header-content .time-now {
+        border: #9d3266 solid 1px;
+        padding: 1px 5px;
+        line-height: 1;
+    }
+
+    .header-content .time-now span {
+        font-size: 11px;
+        color: #9d3266;
+    }
+
+    .custom-button {
+        background-color: #9d3266;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: 300ms;
+    }
+
+    .custom-button:hover {
+        background-color: #9d3266;
+        padding: 10px 40px;
+    }
+
+    .main-content .col-md-3 {
+        padding-left: 8px;
+    }
+
+    @media (max-width: 1080px) {
+        .time-now {
+            display: none;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="page-logo">
+                <div class="container" style="justify-content: space-between; display: flex;">
+                    <div class="page-logo">
+                        <img src="http://baovanhoa.vn/Portals/0/logovanhoa_08.png?ver=2021-11-19-211445-430"
+                            style="height: 100px; width: 200px;" alt="Hello">
+                    </div>
+                </div>
+            </div>
+            <div class="nav navbar">
+                <div class="header-tag">
+                    <a href="">
+                        <i class="fa fa-home" style="color: black;"></i>
+                    </a>
+                </div>
+                <div class="header-search">
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <div type="button" id="form1" class="custom-button"><i class="fa fa-search"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header-content">
+                <div class="tag">
+                    <i class="fa fa-bolt"></i>
+                    <a class="tag-link" href="#">
+                        <span># Xây dựng môi trường văn hóa cơ sở </span>
+                    </a>
+                    <a class="tag-link" href="#">
+                        <span># Giải Báo chí toàn quốc Vì sự nghiệp phát triển Văn hoá, Thể thao và Du lịch</span>
+                    </a>
+                </div>
+                <div class="time-now">
+                    <span>18 tháng mười 2023</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <!-- module1 -->
+                        <div class="row">
+                            <div w3-include-html="module1.html"></div>
+
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module3.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module4.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module5.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module6.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module7.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module8.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module9.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div w3-include-html="module10.html">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- module2 -->
+                        <div w3-include-html="module2.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+    </script>
+    <script>
+        includeHTML();
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
